@@ -1,129 +1,176 @@
 :root {
-    --background: #000430;
-    --secondbackground: #171c48;
-    --text: #fff;
-    --purple: #828dff;
-    --teal: #24feee;
+    --background: #001f2f;               /* Deep ocean blue */
+    --secondbackground: #00384d;         /* Soft navy teal */
+    --text: #e0f7ff;                     /* Soft sky white-blue */
+    --neon-sky: #00e0ff;                 /* Neon Sky Blue */
+    --neon-light: #66fcf1;               /* Electric Aqua */
+    --input-bg: #002c3b;                 /* Dark teal */
+    --glow: 0 0 15px #00e0ff, 0 0 25px #00e0ff, 0 0 35px #66fcf1;
 }
 
-
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: var(--background);
     color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.container{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin: 120px auto 0 auto;
-max-width: 500px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 120px auto 0 auto;
+    max-width: 500px;
 }
-.con1{
+
+.con1 {
     padding: 30px;
     border-radius: 20px;
-    border: 2px solid var(--purple);
+    border: 2px solid var(--neon-sky);
+    background-color: var(--secondbackground);
     display: flex;
     justify-content: space-between;
-    gap:50px;
-    width:100%;
+    gap: 50px;
+    width: 100%;
+    box-shadow: var(--glow);
 }
-.details{
+
+.details {
     width: 100%;
 }
-#progressbar{
+
+#progressbar {
     width: 100%;
-    height:10px;
-    background-color: var(--secondbackground);
+    height: 10px;
+    background-color: var(--input-bg);
     border-radius: 5px;
     margin-top: 20px;
 }
-#progress{
-    width:0%;
+
+#progress {
+    width: 0%;
     height: 10px;
-    background-color: var(--teal);
+    background-color: var(--neon-sky);
     border-radius: 10px;
     transition: all 0.3s ease;
+    box-shadow: var(--glow);
 }
-#nums{
-    width:100px ;
+
+#nums {
+    width: 100px;
     height: 100px;
-    background-color: var(--purple);
-    display:flex;
+    background: linear-gradient(135deg, var(--neon-sky), var(--neon-light));
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     font-size: 30px;
     font-weight: bold;
+    color: var(--background);
+    box-shadow: var(--glow);
 }
-form{
+
+form {
     margin-top: 60px;
     width: 100%;
     display: flex;
-    gap:10px;
+    gap: 10px;
 }
-input{
+
+input {
     flex: 1;
     padding: 16px;
-    background: var(--secondbackground);
-    border: 1px solid var(--purple);
+    background: var(--input-bg);
+    border: 1px solid var(--neon-light);
     border-radius: 10px;
     outline: none;
-    color: #fff;
+    color: var(--text);
+    transition: 0.3s ease;
+    box-shadow: var(--glow);
 }
-button{
- 
+
+input:focus {
+    border-color: var(--neon-sky);
+    box-shadow: var(--glow);
+}
+
+button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--purple);
-    color: #fff;
+    background-color: var(--neon-sky);
+    color: var(--background);
     font-size: 30px;
     font-weight: bold;
     outline: none;
     border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: var(--glow);
 }
-#task-list{
+
+button:hover {
+    background-color: var(--neon-light);
+    box-shadow: 0 0 25px var(--neon-light), 0 0 45px var(--neon-light);
+}
+
+#task-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 30px;
-    width:100%;
-    list-style:none;
+    width: 100%;
+    list-style: none;
 }
-.taskitem{
+
+.taskitem {
     display: flex;
     background-color: var(--secondbackground);
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 8px rgba(0, 224, 255, 0.2);
 }
-.task{
+
+.task {
     display: flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
-.task input{
-    width:20px;
-    height:20px;
+
+.task input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--neon-sky);
 }
-.task.completed p{
+
+.task.completed p {
     text-decoration: line-through;
-    color: #24feee;
+    color: var(--neon-sky);
+    opacity: 0.6;
+    text-shadow: 0 0 4px var(--neon-sky);
 }
-.taskitem img{
+
+.taskitem img {
     width: 24px;
     height: 24px;
-    margin:0 10px ;
+    margin: 0 10px;
     cursor: pointer;
+    filter: brightness(1.5);
+    transition: 0.3s ease;
+}
+
+.taskitem img:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 4px var(--neon-sky));
 }
